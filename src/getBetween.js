@@ -1,4 +1,3 @@
-const data = require('../data.json');
 const Dates = require('./Dates.js');
 
 const SLUGS = {
@@ -8,16 +7,13 @@ const KEYS = {
   score: 'score'
 }
 
-module.exports = {
-  getBetween: (startDate, endDate) => {
-    const dataset = data.data
-      .find(aggregation => aggregation.slug === SLUGS.overall)
-      .details
-      .find(series => series.key === KEYS.score);
+module.exports = (domainData) => {
+  return (startDate, endDate) => {
+    const dataset = domainData.getSeries(KEYS.score, SLUGS.overall);
 
     return dataset.series.filter(elem => {
       const elemDate = new Date(elem.x);
       return Dates.between(elemDate, startDate, endDate);
-    })
+    });
   }
 }

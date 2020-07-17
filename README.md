@@ -1,1 +1,3 @@
-# cloud
+
+# CONTRIBUTING
+See package.json scripts
