@@ -2,43 +2,43 @@ const DomainObjects = require('./DomainObjects.js');
 
 describe('domain objects', () => {
   const SCORE_SERIES = {
-    "series": [
+    'series': [
       {
-        "y": 282,
-        "x": "2015-08-19T14:00:19.352000Z"
+        'y': 282,
+        'x': '2015-08-19T14:00:19.352000Z'
       }
     ],
-    "key":"score"
+    'key': 'score'
   };
 
   const MY_SLUG = {
-    "details": [
+    'details': [
       SCORE_SERIES,
       {
-        "series":[
+        'series': [
           {
-            "y":{
-              "quiz_session_type":"Study",
-              "priority":282,
-              "score_delta":null,
-              "quiz_session":6775,
-              "quiz_config":226,
-              "quiz_config_title":"Platform Reference for AWS"
+            'y': {
+              'quiz_session_type': 'Study',
+              'priority': 282,
+              'score_delta': null,
+              'quiz_session': 6775,
+              'quiz_config': 226,
+              'quiz_config_title': 'Platform Reference for AWS'
             },
-            "x":"2015-08-19T14:00:19.352000Z"
+            'x': '2015-08-19T14:00:19.352000Z'
           }
         ],
-        "key":"extra"
+        'key': 'extra'
       }
     ],
-    "title": "Overall",
-    "type": "aggregation",
-    "id": 42,
-    "slug": "my-slug"
+    'title': 'Overall',
+    'type': 'aggregation',
+    'id': 42,
+    'slug': 'my-slug'
   };
 
   const RAW_DATA = {
-    "data": [
+    'data': [
       MY_SLUG
     ]
   };
@@ -57,6 +57,5 @@ describe('domain objects', () => {
     it('get a series', () => {
       expect(domainData.getSeries('score', 'my-slug')).toStrictEqual(SCORE_SERIES);
     });
-
   });
 });

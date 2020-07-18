@@ -8,13 +8,13 @@ module.exports = class DomainObjects {
     this.rawData = rawData;
   }
 
-  getSlug(slugId) {
+  getSlug(slugName) {
     return this.rawData.data
-      .find(aggregation => aggregation.slug === slugId)
+      .find(aggregation => aggregation.slug === slugName)
   }
 
-  getSeries(key, slugId) {
-    const slug = this.getSlug(slugId);
+  getSeries(key, slugName) {
+    const slug = this.getSlug(slugName);
 
     return slug.details
       .find(series => series.key === key);
