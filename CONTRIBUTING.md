@@ -1,3 +1,3 @@
 See package.json scripts to how to run.
-
-Mainly is `npm test` to run test in watch mode.
+Mainly is `npm i` then `npm test` to run test in watch mode.
+Tested with NPM v12 LTS.
