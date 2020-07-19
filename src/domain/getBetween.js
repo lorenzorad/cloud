@@ -8,8 +8,8 @@ I kept it here just to show an alternative way to ES6 classes.
 
 /**
  * @param domainData: DomainObjects
- * @param config: {key: String, slug: String}
- * @return (startDate: Date, endDate: Date) => {x: Date, y: number}
+ * @param config: {key: String, slug: String}\
+ * @return function(*=, *=): {startDate: (string), endDate: (string)}} => {x: Date, y: number}
  */
 module.exports = (domainData, config) => {
   return (startDate, endDate) => {
