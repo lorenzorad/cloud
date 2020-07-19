@@ -1,5 +1,5 @@
-# Requirements
-Each task has its own file js to verify it. You can see an example usage in their tests (task1.spec.js, task2.spec.js).
+Each task has its own file js to verify it inside `public` folder.
+You can see an example usage in their tests (task1.spec.js, task2.spec.js, ...).
 
 ## task1.js
 The data in the data.json file represent the data point to be plotted on a line graph.

@@ -5,6 +5,12 @@ This small utility method could be places inside DomainObjects.js,
 because it's a function that works over the domain data.
 I kept it here just to show an alternative way to ES6 classes.
  */
+
+/**
+ * @param domainData: DomainObjects
+ * @param config: {key: String, slug: String}
+ * @return (startDate: Date, endDate: Date) => {x: Date, y: number}
+ */
 module.exports = (domainData, config) => {
   return (startDate, endDate) => {
     const dataset = domainData.getSeries(config.key, config.slug);
