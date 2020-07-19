@@ -1,4 +1,4 @@
-const DataRepository = require('../src/repository/DataRepository.js');
+const DataRepository = require('../src/repositories/DataRepository.js');
 const getBetween = require('../src/domain/getBetween.js');
 const lineGraphDataAdapter = require('../src/adapters/lineGraphDataAdapter.js');
 

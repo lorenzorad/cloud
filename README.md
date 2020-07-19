@@ -16,4 +16,7 @@ Expected result: json [ { "y":282, "x":"2015-08-19T14:00:19.352000Z" }, { "y":22
 Write the same function as above to match the case that:
 * The series does not always contains end_date or start_date
 * Start_date and end_date don’t match the “x” key in the serie
-* Consider that we want to display the data with the key “extra” on mouse over on a point of the key “score”. Write a function to format the data for this use case.
+
+## task3.js
+Consider that we want to display the data with the key “extra” on mouse over on a point of the key “score”.
+Write a function to format the data for this use case.

@@ -1,4 +1,4 @@
-const Dates = require('../Dates.js');
+const Dates = require('../utils/Dates.js');
 
 /*
 This small utility method could be places inside DomainObjects.js,

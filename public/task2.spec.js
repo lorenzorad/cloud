@@ -1,4 +1,4 @@
-const rawData = require('../src/repository/data.json');
+const rawData = require('../src/repositories/data.json');
 const task2 = require('./task2.js');
 
 describe('task 2', () => {
