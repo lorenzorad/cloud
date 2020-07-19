@@ -9,12 +9,12 @@ module.exports = (domainData, config) => {
   return (startDate, endDate) => {
     const dataset = domainData.getSeries(config.key, config.slug);
     const datasetOrderByDate = dataset.series.sort(sortByDateAscStrategy);
+    const startDateNotNull = startDate || new Date(datasetOrderByDate[0].x);
+    const endDateNotNull = endDate || new Date(datasetOrderByDate[datasetOrderByDate.length - 1].x);
 
     return datasetOrderByDate.filter(elem => {
         const elemDate = new Date(elem.x);
-
-        const safeStartDate = startDate || new Date(datasetOrderByDate[0].x);
-        return Dates.isBetween(elemDate, safeStartDate, endDate);
+        return Dates.isBetween(elemDate, startDateNotNull, endDateNotNull);
       });
   }
 }
