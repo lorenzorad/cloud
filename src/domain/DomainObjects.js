@@ -19,4 +19,8 @@ module.exports = class DomainObjects {
     return slug.details
       .find(series => series.key === key);
   }
+
+  getExtras(slugName) {
+    return this.getSeries('extra', slugName);
+  }
 }

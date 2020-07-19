@@ -11,25 +11,27 @@ describe('domain objects', () => {
     'key': 'score'
   };
 
+  const EXTRA_SERIES = {
+    'series': [
+    {
+      'y': {
+        'quiz_session_type': 'Study',
+        'priority': 282,
+        'score_delta': null,
+        'quiz_session': 6775,
+        'quiz_config': 226,
+        'quiz_config_title': 'Platform Reference for AWS'
+      },
+      'x': '2015-08-19T14:00:19.352000Z'
+    }
+  ],
+    'key': 'extra'
+  };
+
   const MY_SLUG = {
     'details': [
       SCORE_SERIES,
-      {
-        'series': [
-          {
-            'y': {
-              'quiz_session_type': 'Study',
-              'priority': 282,
-              'score_delta': null,
-              'quiz_session': 6775,
-              'quiz_config': 226,
-              'quiz_config_title': 'Platform Reference for AWS'
-            },
-            'x': '2015-08-19T14:00:19.352000Z'
-          }
-        ],
-        'key': 'extra'
-      }
+      EXTRA_SERIES
     ],
     'title': 'Overall',
     'type': 'aggregation',
@@ -56,6 +58,10 @@ describe('domain objects', () => {
 
     it('get a series', () => {
       expect(domainData.getSeries('score', 'my-slug')).toStrictEqual(SCORE_SERIES);
+    });
+
+    it('get extras', () => {
+      expect(domainData.getExtras('my-slug')).toStrictEqual(EXTRA_SERIES);
     });
   });
 });
