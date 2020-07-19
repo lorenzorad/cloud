@@ -6,7 +6,7 @@ describe('Dates', () => {
     const intervalEndDate = new Date(2020);
     const dateToCheck = new Date(2019);
 
-    expect(Dates.between(dateToCheck, intervalStartDate, intervalEndDate))
+    expect(Dates.isBetween(dateToCheck, intervalStartDate, intervalEndDate))
       .toBe(true);
   });
 
@@ -15,7 +15,7 @@ describe('Dates', () => {
     const intervalEndDate = new Date(2020);
     const dateToCheck = new Date(2017);
 
-    expect(Dates.between(dateToCheck, intervalStartDate, intervalEndDate))
+    expect(Dates.isBetween(dateToCheck, intervalStartDate, intervalEndDate))
       .toBe(false);
   });
 
@@ -24,7 +24,7 @@ describe('Dates', () => {
     const intervalEndDate = new Date('2020-11-18T10:51:01.240772Z');
     const dateToCheck = new Date('2019-11-18T10:51:01.240772Z');
 
-    expect(Dates.between(dateToCheck, intervalStartDate, intervalEndDate))
+    expect(Dates.isBetween(dateToCheck, intervalStartDate, intervalEndDate))
       .toBe(true);
   });
 });

@@ -1,5 +1,5 @@
 module.exports = {
-  between: (current, start, end) => {
+  isBetween: (current, start, end) => {
     return current >= start && current <= end;
   }
 }

@@ -8,10 +8,17 @@ I kept it here just to show an alternative way to ES6 classes.
 module.exports = (domainData, config) => {
   return (startDate, endDate) => {
     const dataset = domainData.getSeries(config.key, config.slug);
+    const datasetOrderByDate = dataset.series.sort(sortByDateAscStrategy);
 
-    return dataset.series.filter(elem => {
-      const elemDate = new Date(elem.x);
-      return Dates.between(elemDate, startDate, endDate);
-    });
+    return datasetOrderByDate.filter(elem => {
+        const elemDate = new Date(elem.x);
+
+        const safeStartDate = startDate || new Date(datasetOrderByDate[0].x);
+        return Dates.isBetween(elemDate, safeStartDate, endDate);
+      });
   }
+}
+
+const sortByDateAscStrategy = (elem1, elem2) => {
+  return new Date(elem1.x) - new Date(elem2.x);
 }
