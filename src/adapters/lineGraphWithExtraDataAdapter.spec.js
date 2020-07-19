@@ -7,7 +7,9 @@ describe('lineGraphWithExtraDataAdapter', () => {
     slug: 'any-slug'
   };
   const getBetween = jest.fn(() => () => 'pippo');
-  const lineGraphDataAdapter = jest.fn(() => () => []);
+  const lineGraphDataAdapter = jest.fn(() => () => {
+    return {data: []};
+  });
 
   it('should return data according to required format', () => {
     const domainData = new DomainObjects({

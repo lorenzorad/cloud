@@ -14,7 +14,7 @@ module.exports = (getBetween, config, lineGraphDataAdapter) => {
       startDate && new Date(startDate),
       endDate && new Date(endDate)
     );
-    const dataWithExtra = extraEnricher(domainData.getExtras(config.slug), dataToPlot);
+    const dataWithExtra = extraEnricher(domainData.getExtras(config.slug).series, dataToPlot.data);
 
     return {
       data: dataWithExtra,
