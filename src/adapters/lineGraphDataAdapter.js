@@ -4,8 +4,8 @@ module.exports = (getBetween, config) => {
 
     return {
       data: dataToPlot,
-      startDate: startDate.toISOString(),
-      endDate: endDate.toISOString()
+      startDate: startDate && startDate.toISOString(),
+      endDate: endDate && endDate.toISOString()
     };
   }
 };
